@@ -243,8 +243,14 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(array){
+  newArr = [];
+  for(let i=0;i<array.length;i++){
+    if(array[i].years >= "1900-2000"){
+      newArr.push(array[i].name)
+    }
+    return newArr
+  }
 }
 
 
@@ -258,10 +264,12 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
+function removeArtist(array, index){
+   array.splice(index, 1);
+   return array.length;
 }
    
+removeArtist(artists,0);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -279,10 +287,19 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(array){
+    let newArtist = {
+      id: 20,
+      name: "Jacob Griffith-Elliott", 
+      years: "1993 - current day",
+      genre: "Web Design", 
+      nationality: "American",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor, risus eget rhoncus lacinia, eros massa venenatis orci, ut blandit elit mauris nec lectus.",
+    }
+    array.push(newArtist);
+    return array;
   }
-
+addArtist(artists)
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -292,9 +309,16 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){
+  let paintsAlot = [];
+  for (let i=0;i<array.length;i++){
+    if(array[i].paintings > 100){
+      paintsAlot.push(array[i].name)
+    }
+  }
+  return paintsAlot;
 }
+lotsOfArt(artists);
 
 
 
