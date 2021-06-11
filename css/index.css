@@ -218,4 +218,20 @@ button:hover {
     color: #626262;
     font-size: 99%;
   }
+  .artists-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+  }
+  .artist {
+    width: 50%;
+  }
+  .artist img {
+    height: 50%;
+  }
+  .bio {
+    font-size: 50%;
+  }
 }
